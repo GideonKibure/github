@@ -1,4 +1,4 @@
-// Data for the Engineering Library System
+// Data for the FrogsTech-Hub System
 
 // Courses data
 const courses = [
@@ -19,7 +19,7 @@ const courses = [
             "Applied Mathematics III <i>MS 6222</i>",
             "Industrial Practical Training I <i>ME 6208</i>"
         ],
-        code: "MTE", // Added course code for better searching
+        code: "DME", // Added course Short name for better searching
         searchTerms: ["mechatronics", "robotics", "automation", "control systems", "electronics"]
     },
     {
@@ -39,7 +39,7 @@ const courses = [
             "Applied Mathematics III <i>MS 6222</i>",
             "Industrial Practical Training I <i>ME 6208</i>"
         ],
-        code: "MCE", // Added course code for better searching
+        code: "DME", // Added course Short name for better searching
         searchTerms: ["mechanical", "thermodynamics", "fluid mechanics", "machine design", "manufacturing"]
     },
     {
@@ -59,7 +59,7 @@ const courses = [
             "Applied Mathematics III <i>MS 6222</i>",
             "Industrial Practical Training 1 <i>ME 6208</i>"
         ],
-        code: "AUE", // Added course code for better searching
+        code: "DAAE", // Added course Short name for better searching
         searchTerms: ["automotive", "vehicle", "engine", "transmission", "aerodynamics", "chassis"]
     },
     {
@@ -79,7 +79,7 @@ const courses = [
             "Applied Mathematics III <i>MS 6222</i>",
             "Industrial Practical Training I <i>ME 6208</i>"
         ],
-        code: "SAE", // Added course code for better searching
+        code: "DMEISOH", // Added course Short name for better searching
         searchTerms: ["safety", "risk", "fire", "environmental", "industrial", "compliance"]
     }
 ];
@@ -808,231 +808,7 @@ const resources = [
         dateAdded: "2025-12-22",
         searchTerms: ["measurement", "instrumentation", "ME6207", "ME6224",]
     },
-
-    // Thermodynamics Notes
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {
-        id: 35,
-        title: "Computer Aided Design I Tutorial",
-        courses: ["mechatronics", "mechanical", "automotive", "safety"],
-        type: "videos",
-        description: "Video tutorials for Computer Aided Design I (ME 6201) covering AutoCAD basics.",
-        tags: ["CAD", "design", "ME 6201", "AutoCAD", "shared"],
-        icon: "fas fa-video",
-        iconColor: "#9800d4ff",
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "ME 6201",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["CAD", "design", "AutoCAD", "ME6201", "shared", "all"]
-    },
-
-    // ENGINEERING SCIENCE (Mechanical, Automotive, Safety only)
-    {
-        id: 15,
-        title: "Mechanical Engineering Science",
-        courses: ["mechanical", "automotive", "safety"],
-        type: "notes",
-        description: "Notes for Mechanical Engineering Science II (ME 6206). Not taken by Mechatronics.",
-        tags: ["engineering science", "ME 6206", "mechanical"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#1E90FF", // For 3-course shared
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "ME 6206",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["engineering", "science", "ME6206", "mechanical", "automotive", "safety"]
-    },
-
-    // MECHATRONICS ONLY MODULES
-    {
-        id: 16,
-        title: "Computer Programming II",
-        courses: ["mechatronics"],
-        type: "notes",
-        description: "Complete guide to Computer Programming II (CS 6225) for Mechatronics students only.",
-        tags: ["programming", "computer", "CS 6225", "mechatronics-only"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#2E8B57", // Green for mechatronics
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "CS 6225",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["programming", "computer", "CS6225", "mechatronics", "only"]
-    },
-    {
-        id: 17,
-        title: "Digital Electronics Complete Book",
-        courses: ["mechatronics"],
-        type: "notes",
-        description: "Complete notes for Digital Electronics (EE 6273) - Mechatronics exclusive module.",
-        tags: ["digital", "electronics", "EE 6273", "mechatronics-only"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#2E8B57",
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "EE 6273",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["digital", "electronics", "EE6273", "mechatronics", "only"]
-    },
-    {
-        id: 18,
-        title: "Control Systems Fundamentals",
-        courses: ["mechatronics"],
-        type: "notes",
-        description: "Fundamentals of Control Systems including PID controllers and stability analysis.",
-        tags: ["control systems", "PID", "stability", "mechatronics-only"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#2E8B57",
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "MTE 5201",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["control", "systems", "PID", "feedback", "mechatronics"]
-    },
-
-    // AUTOMOTIVE ONLY MODULES
-    {
-        id: 19,
-        title: "Vehicle Dynamics & Systems",
-        courses: ["automotive"],
-        type: "notes",
-        description: "Comprehensive notes on vehicle dynamics and systems for Automotive Engineering only.",
-        tags: ["vehicle", "automotive-only", "automotive"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#4682B4", // Blue for automotive
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "AUE 3201",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["vehicle", "dynamics", "automotive", "only"]
-    },
-
-    // MECHANICAL ONLY MODULES
-    {
-        id: 20,
-        title: "Manufacturing Engineering III",
-        courses: ["mechanical", "safety"],
-        type: "notes",
-        description: "Manufacturing Engineering III (ME 6204) notes for Mechanical and Safety students.",
-        tags: ["manufacturing", "engineering", "ME 6204", "mechanical"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#ffe91eff",
-        filePath: "documents/test.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "ME 6204",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["manufacturing", "engineering", "ME6204", "mechanical", "safety"]
-    },
-
-    // SAFETY ONLY MODULES
-    {
-        id: 21,
-        title: "Risk Assessment Methodology",
-        courses: ["safety"],
-        type: "notes",
-        description: "Risk assessment methodology guide for Safety Engineering students only.",
-        tags: ["risk", "assessment", "safety-only"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#1E90FF",
-        filePath: "documents/safety/Risk_Assessment.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "SAE 4101",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["risk", "assessment", "safety", "only"]
-    },
-
-    // SHARED BY 2 COURSES
-    {
-        id: 22,
-        title: "Engineering Measurement Notes",
-        courses: ["mechatronics", "mechanical"],
-        type: "notes",
-        description: "Engineering Measurement and Instrumentation notes for Mechatronics and Mechanical.",
-        tags: ["measurement", "instrumentation", "ME 6224", "shared-two"],
-        icon: "fas fa-file-pdf",
-        iconColor: "#9370DB", // For 2-course shared
-        filePath: "documents/shared/Engineering_Measurement.pdf",
-        fileType: "pdf",
-        fileSize: "547 KB",
-        moduleCode: "ME 6224",
-        author: "Bill Gideonel",
-        dateAdded: "2025-12-22",
-        searchTerms: ["measurement", "instrumentation", "ME6224", "mechatronics", "mechanical"]
-    }
-];
+]
 
 // Fixed Timetable data with proper structure
 const timetableData = {
@@ -1119,8 +895,8 @@ const timetableData = {
     ]
 };
 
-// Enhanced search function for better filtering
-// Enhanced search function with multi-course support
+
+// Search function with multi-course support
 function searchResources(query, filters = {}) {
     const searchQuery = query.toLowerCase().trim();
     
@@ -1134,7 +910,7 @@ function searchResources(query, filters = {}) {
             (resource.author && resource.author.toLowerCase().includes(searchQuery)) ||
             (resource.searchTerms && resource.searchTerms.some(term => term.toLowerCase().includes(searchQuery)));
         
-        // Filter by course - now supports multi-course resources
+        // Filter by course, multi-course resources
         let courseMatch = true;
         if (filters.course && filters.course !== 'all') {
             courseMatch = resource.courses.includes(filters.course);
@@ -1256,9 +1032,7 @@ function getSuggestedResources(courseId, limit = 3) {
 }
 
 // Function to check if a file exists (for error handling)
-function checkFileExists(filePath) {
-    // This is a placeholder function
-    // In a real implementation, you might want to check file existence
+function checkFileExists(filePath) {// In a real implementation, you might want to check file existence
     return filePath && filePath.length > 0;
 }
 

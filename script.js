@@ -1,5 +1,4 @@
-// Main JavaScript for Engineering Library System
-
+// Main JavaScript for FrogsTech-Hub System
 // DOM Elements
 const popupModal = document.getElementById('popupModal');
 const closeModalBtn = document.getElementById('closeModal');
@@ -240,7 +239,7 @@ function setupEventListeners() {
     resourceType.addEventListener('change', loadResources);
     resourceCourse.addEventListener('change', loadResources);
     
-    // ========== UPDATED EVENT RSVP BUTTON FUNCTIONALITY ==========
+    // RSVP button functionalities 
     if (eventRsvpBtn) {
         eventRsvpBtn.addEventListener('click', function() {
             // Open Google Form for Nyama Choma event
@@ -257,11 +256,11 @@ function setupEventListeners() {
         });
     }
     
-    // ========== UPDATED ATTEND EVENT BUTTON FUNCTIONALITY ==========
+    // Attend event button
     if (attendEventBtn) {
         attendEventBtn.addEventListener('click', function() {
-            // Open Google Form for Career Talk event
-            openGoogleForm('careerTalk', 'Career Talk Event');
+            // Open Google Form for specific event
+            openGoogleForm('Eg-careerTalk', 'Eg-Career Talk Event');
             
             // Update button appearance
             this.innerHTML = "🎉 You're Attending!";
@@ -317,7 +316,7 @@ function setupEventListeners() {
     });
 }
 
-// ========== NEW FUNCTION: OPEN GOOGLE FORM ==========
+// Opening google forms
 function openGoogleForm(formKey, eventName) {
     const formUrl = GOOGLE_FORM_URLS[formKey];
     
