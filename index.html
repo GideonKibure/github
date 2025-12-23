@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Library Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Popup Modal for Events and Quotes -->
+    <div class="modal-overlay" id="popupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📚 Weekly Updates & Event Reminder</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quote-section">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="inspirational-quote">"Engineering is not what you memorize, but what you can create. Your degree is just the user manual,  the real product is YOU!🫵"</p>
+                    <i class="fas fa-quote-right"></i>
+                    <p class="quote-author">- Somebody</p>
+                </div>
+                <div class="event-section">
+                    <h3><i class="fas fa-calendar-alt"></i> Upcoming Event</h3>
+                    <div class="event-details">
+                        <div class="event-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="event-info">
+                            <h4>FROGS BARBEQUE</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> La Viv Resort</p>
+                            <p><i class="fas fa-clock"></i> Saturday, 27th October • Time to be Confirmed</p>
+                            <p><i class="fas fa-gamepad"></i> PS Challenge • Team Games • Networking • Movie Night</p>
+                            <p class="event-tagline">Fuel your brain with knowledge, then fuel your soul with fun!</p>
+                        </div>
+                    </div>
+                    <button class="event-rsvp">I'll be there! 🎯</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p>Remember: The best engineers build connections, not just circuits!</p>
+                <button class="close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Groups Modal -->
+    <div class="modal-overlay" id="studyGroupsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-friends"></i> Study Groups</h2>
+                <button class="close-modal close-study-groups">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="study-groups-controls">
+                    <label for="groupsCourseSelect">Select Course:</label>
+                    <select id="groupsCourseSelect">
+                        <option value="">Choose a course</option>
+                        <option value="mechatronics">Mechatronics Engineering</option>
+                        <option value="mechanical">Mechanical Engineering</option>
+                        <option value="automotive">Automotive Engineering</option>
+                        <option value="safety">Safety Engineering</option>
+                    </select>
+                </div>
+                
+                <div class="study-groups-container" id="studyGroupsContainer">
+                    <div class="no-groups-selected">
+                        <i class="fas fa-users"></i>
+                        <h3>Select a course to view study groups</h3>
+                        <p>Choose a course from the dropdown above to see available study groups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="De Frogs logo" class="frogslogo">
+                <span>FrogsTech-Hub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-tab="home">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-tab="timetable">
+                    <a href="#">
+                        <i class="fas fa-calendar"></i>
+                        <span>Timetable</span>
+                    </a>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-tab="resources">
+                    <a href="#">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Resources</span>
+                    </a>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-tab="events">
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <span>Events</span>
+                    </a>
+                    <div class="nav-indicator"></div>
+                </li>
+            </ul>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <span class="user-name">De Frogs</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section class="content-section active" id="home-section">
+            <header class="page-header">
+                <h1>Engineering Library Hub</h1>
+                <p>Grow your mind and your connections. Everything you need to succeed, together</p>
+            </header>
+            
+            <div class="courses-section">
+                <h2>Select Your Engineering Course</h2>
+                <p class="section-subtitle">Click on your course to access modules and resources</p>
+                
+                <div class="courses-grid" id="coursesContainer">
+                    <!-- Courses will be loaded by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="quick-links">
+                <div class="quick-link-card" id="studyGroupsBtn">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Study Groups</h3>
+                    <p>Join peer study sessions</p>
+                </div>
+                <div class="quick-link-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>View Timetable</h3>
+                    <p>Check your schedule</p>
+                </div>
+                <div class="quick-link-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Study Resources</h3>
+                    <p>Access course materials</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timetable Section -->
+        <section class="content-section" id="timetable-section">
+            <header class="page-header">
+                <h1>Course Timetables</h1>
+                <p>Select your course to view the weekly schedule</p>
+            </header>
+            
+            <div class="timetable-controls">
+                <div class="course-selector">
+                    <label for="courseSelect">Select Course:</label>
+                    <select id="courseSelect">
+                        <option value="all">All Courses</option>
+                        <option value="mechatronics">Mechatronics Engineering</option>
+                        <option value="mechanical">Mechanical Engineering</option>
+                        <option value="automotive">Automotive Engineering</option>
+                        <option value="safety">Safety Engineering</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="timetable-container">
+                <div class="timetable" id="timetable">
+                    <!-- Timetable will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="content-section" id="resources-section">
+            <header class="page-header">
+                <h1>Study Resources</h1>
+                <p>Find notes, images, and relevant materials for your courses</p>
+            </header>
+            
+            <div class="resources-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="resourceSearch" placeholder="Search for notes, topics, or resources...">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div class="filter-controls">
+                    <select id="resourceType">
+                        <option value="all">All Types</option>
+                        <option value="notes">Notes</option>
+                        <option value="images">Images</option>
+                        <option value="videos">Videos</option>
+                        <option value="books">Books</option>
+                    </select>
+                    <select id="resourceCourse">
+                        <option value="all">All Courses</option>
+                        <option value="mechatronics">Mechatronics</option>
+                        <option value="mechanical">Mechanical</option>
+                        <option value="automotive">Automotive</option>
+                        <option value="safety">Safety</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="resources-container">
+                <div class="resources-grid" id="resourcesGrid">
+                    <!-- Resources will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="content-section" id="events-section">
+            <header class="page-header">
+                <h1>Student Events</h1>
+                <p>Join our community events to connect, learn, and have fun together</p>
+            </header>
+            
+            <div class="featured-event">
+                <div class="featured-event-content">
+                    <div class="event-tag">Featured Event</div>
+                    <h2>Nyama Choma & Games Night</h2>
+                    <div class="event-details-list">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Venue:</strong> La Viv Resort</p>
+                        <p><i class="fas fa-calendar-day"></i> <strong>Date:</strong> Saturday, 27th October</p>
+                        <p><i class="fas fa-clock"></i> <strong>Time:</strong> 3:00 PM onwards</p>
+                        <p><i class="fas fa-users"></i> <strong>Attending:</strong> 45+ students confirmed</p>
+                    </div>
+                    <p class="event-description">Join us for an evening of networking, delicious nyama choma, team games, and a PlayStation challenge! This is a perfect opportunity to relax, connect with fellow engineering students, and build lasting friendships outside the classroom.</p>
+                    
+                    <div class="event-activities">
+                        <h3>Activities:</h3>
+                        <div class="activities-list">
+                            <div class="activity">
+                                <i class="fas fa-utensils"></i>
+                                <span>Nyama Choma Feast</span>
+                            </div>
+                            <div class="activity">
+                                <i class="fas fa-gamepad"></i>
+                                <span>PS Gaming Tournament</span>
+                            </div>
+                            <div class="activity">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <span>Team Building Games</span>
+                            </div>
+                            <div class="activity">
+                                <i class="fas fa-music"></i>
+                                <span>Music & Networking</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-actions">
+                        <button class="btn-attend">Attend Event</button>
+                        <button class="btn-share">Share with Friends</button>
+                    </div>
+                </div>
+                <div class="featured-event-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-users"></i>
+                        <p>Student Get-Together</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upcoming-events">
+                <h2>Upcoming Events</h2>
+                <div class="events-list">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="date-day">30</span>
+                            <span class="date-month">Oct</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Study Marathon Session</h3>
+                            <p><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Main Library, Room 302</p>
+                            <p>All-night study session with snacks and peer support</p>
+                        </div>
+                        <button class="event-interest">Interested</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="date-day">05</span>
+                            <span class="date-month">Nov</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Industry Professional Talk</h3>
+                            <p><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Engineering Building, Auditorium</p>
+                            <p>Mr. James Kariuki, Senior Engineer at TechAuto Ltd.</p>
+                        </div>
+                        <button class="event-interest">Interested</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="date-day">12</span>
+                            <span class="date-month">Nov</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>Engineering Project Fair</h3>
+                            <p><i class="fas fa-clock"></i> 10:00 AM - 6:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> University Courtyard</p>
+                            <p>Showcase your projects and see what others are building</p>
+                        </div>
+                        <button class="event-interest">Interested</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Birthday Modal -->
+<div id="birthdayModal" class="modal-overlay birthday-modal">
+    <div class="modal-content birthday-content">
+        <button class="close-modal">&times;</button>
+        <div class="birthday-card">
+            <!-- Confetti Background -->
+            <div class="confetti-container"></div>
+            
+            <!-- Header -->
+            <div class="birthday-header">
+                <div class="confetti">
+                    <i class="fas fa-birthday-cake"></i>
+                    <i class="fas fa-gift"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>🎉 Happy Birthday Nancy! 🎉</h2>
+                <p class="birthday-subtitle">Wishing you an amazing day filled with joy!</p>
+            </div>
+            
+            <!-- Body -->
+            <div class="birthday-body">
+                <!-- Profile Picture -->
+                <div class="profile-container">
+                    <div class="profile-frame">
+                        <img src="images/nuncy.jpg" 
+                             alt="Nancy" 
+                             class="profile-image"
+                             onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'">
+                    </div>
+                    <div class="name-badge">
+                        <i class="fas fa-crown"></i>
+                        <span>Nancy</span>
+                    </div>
+                </div>
+                
+                <!-- Birthday Message -->
+                <div class="birthday-message">
+                    <p>Dear Nancy,</p>
+                    <p>On this special day, the entire Frogs community wishes you a fantastic birthday filled with success and happiness in your studies!</p>
+                    <p>May your year be as amazing as you are!</p>
+                    
+                    <!-- Birthday Wishes -->
+                    <div class="birthday-wishes">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Keep shining in your engineering journey!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="De Frogs logo" class="frogslogo">
+                <span>FrogsTech-Hub</span>
+            </div>
+            <p class="footer-quote">"Study for experience, not just papers. Build for impact, not just grades."</p>
+            <p class="footer-copyright">&copy; 2025 Gideon_Kibure. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
